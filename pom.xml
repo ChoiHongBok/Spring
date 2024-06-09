@@ -2,42 +2,54 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <!-- 현재 프로젝트가 상속받는 부모 프로젝트 정의 -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.5</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>3.2.5</version> <!-- Spring Boot 버전 -->
+        <relativePath/> <!-- lookup parent from repository : 기본적으로 부모 POM 을 원격 저장소에서 검색하도록 설정 -->
     </parent>
-    <groupId>com.chb</groupId>
-    <artifactId>spring</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
-    <name>spring</name>
-    <description>spring</description>
+
+    <groupId>com.chb</groupId> <!-- 프로젝트를 그룹화하는 ID (보통 도메인 이름을 거꾸로 사용) -->
+    <artifactId>spring</artifactId> <!-- 프로젝트의 고유 식별자 -->
+    <version>0.0.1-SNAPSHOT</version> <!-- 프로젝트 버전 -->
+    <packaging>war</packaging> <!-- 패키징 타입 (Spring Boot 는 기본적으로 jar 사용 / 기존의 웹 애플리케이션 서버(Tomcat/JBoss)에 배포시 war) -->
+    <name>spring</name> <!-- 프로젝트 이름 -->
+    <description>spring</description> <!-- 프로젝트에 대한 설명 -->
+
     <properties>
-        <java.version>22</java.version>
+        <java.version>22</java.version> <!-- Maven 빌드 속성 : java.version 속성을 정의 (Java 22 버전으로 컴파일되고 실행되도록 정의) -->
     </properties>
+
+    <!-- 라이브러 의존성 정의 -->
     <dependencies>
+        <!-- Spring MVC, RESTful 웹 서비스, Tomcat(기본 내장 서버), Jackson (JSON 직렬화/역직렬화) 등 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- 톰캣 서버의 의존성을 제공 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
+            <scope>provided</scope> <!-- 컴파일과 테스트 시에는 사용되지만, 최종 패키징 시에는 제외 (외부 애플리케이션 서버에서 war 파일 배포시 유용) -->
         </dependency>
+
+        <!-- Spring Boot 에서 테스트를 작성하고 실행하기 위한 종속성 제공 : JUnit, Hamcrest, Mockito 등 포함 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <scope>test</scope> <!-- 테스틑 단계에서만 사용 -->
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
             <plugin>
+                <!-- Spring Boot 애플리케이션을 쉽게 빌드하고 실행 -->
+                <!-- Maven 빌드 주기에 통합되어, 실행 가능한 jar, war 파일 생성하고 spring-boot: run 명령어를 통해 애플리케이션 실행 -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
