@@ -43,6 +43,27 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope> <!-- 테스틑 단계에서만 사용 -->
         </dependency>
+
+        <!-- MySQL JDBC Driver -->
+        <!-- MySQL 데이터베이스에 대한 연결 설정 및 관리, SQL 쿼리 전송 및 결과 수신, 데이터베이스 트랜잭션 처리 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.23</version>
+            <scope>runtime</scope> <!-- 애플리케이션이 실행될 때 해당 라이브러리가 포함 -->
+        </dependency>
+
+        <!-- DBCP2 : DBCP 보다 발전, 개선, 성능, 보안 UP 으로 JAVA7 이상 지원 -->
+        <!-- 아래에 길게 설명되어 있지만 DB 연결을 효율적으로 관리한다는 의미인듯 -->
+        <!-- java 응용 프로그램에서 DB 연결을 효율적으로 관리하고 성능을 최적화하기 위해 사용 -->
+        <!-- 연결 풀링 : DB 연결 재사용하도록 풀 관리하여 요청마다 새로운 연결을 생성하고 닫는 오버헤드를 줄인다 -->
+        <!-- 연결 유효성 검사 : 사용되지 않는 동안 풀에 있는 연결이 유효한지 확인하는 메커니즘 제공?, 오랫동안 연결이나 유휴 타이아웃으로 인해 비활성화된 연결을 탐지하고 대체 -->
+        <!-- 자원 관리 : 응용 프로그램이 연결을 사용하고 나면 반환할 수 있도록 하여 리소스를 효율적으로 사용하고, 연결 누수를 방지 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
+            <version>2.9.0</version>
+        </dependency>
     </dependencies>
 
     <build>
