@@ -19,7 +19,7 @@
     <description>spring</description> <!-- 프로젝트에 대한 설명 -->
 
     <properties>
-        <java.version>22</java.version> <!-- Maven 빌드 속성 : java.version 속성을 정의 (Java 22 버전으로 컴파일되고 실행되도록 정의) -->
+        <java.version>17</java.version> <!-- Maven 빌드 속성 : java.version 속성을 정의 (Java 17 버전으로 컴파일되고 실행되도록 정의) -->
     </properties>
 
     <!-- 라이브러 의존성 정의 -->
