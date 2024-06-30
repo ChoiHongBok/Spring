@@ -29,14 +29,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <!-- 톰캣 서버의 의존성을 제공 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
             <scope>provided</scope> <!-- 컴파일과 테스트 시에는 사용되지만, 최종 패키징 시에는 제외 (외부 애플리케이션 서버에서 war 파일 배포시 유용) -->
         </dependency>
-
         <!-- Spring Boot 에서 테스트를 작성하고 실행하기 위한 종속성 제공 : JUnit, Hamcrest, Mockito 등 포함 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

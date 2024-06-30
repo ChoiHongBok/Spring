@@ -33,6 +33,25 @@ public class AppConfig {
         basicDataSource.setPassword(datasourcePassword);
         basicDataSource.setDriverClassName(datasourceDriverClassname);
 
+        // Mysql Connection 셋팅
+//        // setInitialSize 커넥션 풀 처음 시작 시 생성할 초기 커넥션 수
+//        basicDataSource.setInitialSize(5);
+//
+//        // 유휴? 상태에서 유지할 수 있는 최대 커넥션 수
+//        basicDataSource.setMaxIdle(10);
+//
+//        // 최대 활성화 커넥션 수
+//        basicDataSource.setMaxActive(100);
+//
+//        // 커넥션이 유효한지 검사하기 위해 실행할 SQL 쿼리 : 커넥션이 풀에서 사용되기 전에 실행되어 커넥션이 여전히 유효한지 확인
+//        basicDataSource.setValidationQuery("SELECT 1");
+//
+//        // 유휴 상태의 커넥션이 유효한지 테그스트할지를 설정 true 로 설정 시 유휴 커넥션이 주기적으로 유효성 검사를 받는다
+//        basicDataSource.setTestWhileIdle(true);
+//
+//        // 유휴 커넥션을 검사하는 주기 설정정
+//        basicDataSource.setTimeBetweenEvictionRunsMillis(60000);
+
         return basicDataSource;
     }
 
