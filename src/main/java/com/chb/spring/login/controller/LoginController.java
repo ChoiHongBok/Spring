@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class LoginController {
 
+    // @Service 가 없으면 @Autowired 가 빈으로 인식하지 못하여 에러가 발생한다.
     @Autowired
     LoginService loginService;
 
